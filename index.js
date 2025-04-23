@@ -36,7 +36,7 @@ app.post('/api/check-age', (req, res) => {
     return res.json({
         success: true,
         message: 'Value is valid',
-        data: true
+        data: false
       });
   });
   
