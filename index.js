@@ -35,8 +35,17 @@ app.post('/api/check-age', (req, res) => {
     const value = req.query.value;
   
     if (value === '1') {
-      res.send(true);  
+      return res.json({
+        success: true,
+        message: 'Value is valid',
+        data: true
+      });
     } else {
-      res.send(false); 
+      return res.json({
+        success: false,
+        message: 'Value is invalid',
+        data: false
+      });
     }
   });
+  
