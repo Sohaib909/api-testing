@@ -93,6 +93,33 @@ app.post('/api/upload', upload.single('image'), (req, res) => {
   });
 });
 
+
+/////////
+// Temporary storage (in-memory)
+let storedData = null;
+
+// POST API to receive data
+app.post('/post-data', (req, res) => {
+  const data = req.body;
+  
+  if (!data) {
+    return res.status(400).json({ message: 'No data provided' });
+  }
+
+  storedData = data; // Save the posted data
+
+  res.status(200).json({ message: 'Data received successfully', data: storedData });
+});
+
+// GET API to display the stored data
+app.get('/get-data', (req, res) => {
+  if (!storedData) {
+    return res.status(404).json({ message: 'No data found' });
+  }
+
+  res.status(200).json({ message: 'Here is the stored data', data: storedData });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running`);
 });
