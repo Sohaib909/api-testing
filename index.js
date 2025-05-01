@@ -37,6 +37,16 @@ app.get('/api/boolean', (req, res) => {
   res.json({ success: true });
 });
 
+app.get('/api/verify', (req, res) => {
+  return res.status(400).json({
+    success: true,
+    message: 'Success',
+    data: 0
+  });
+});
+
+
+
 // Upload Image API
 app.post('/api/upload', upload.single('image'), (req, res) => {
   if (!req.file) {
@@ -82,8 +92,7 @@ app.get('/api/get-images', (req, res) => {
 // Temporary storage (in-memory)
 let storedData = null;
 
-// POST API to receive array, object, array of objects
-app.post('/post-data', (req, res) => {
+ app.post('/post-data', (req, res) => {
   const data = req.body;
 
   if (!data) {
