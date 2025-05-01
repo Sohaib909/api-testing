@@ -37,11 +37,13 @@ app.get('/api/boolean', (req, res) => {
   res.json({ success: true });
 });
 
+///officially
+
 app.get('/api/verify', (req, res) => {
   return res.status(400).json({
     success: true,
     message: 'Success',
-    data: 0
+    data: 1
   });
 });
 
