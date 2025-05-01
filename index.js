@@ -43,7 +43,7 @@ app.get('/api/verify', (req, res) => {
   return res.status(400).json({
     success: true,
     message: 'Success',
-    data: 1
+    data: 0
   });
 });
 
