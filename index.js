@@ -40,12 +40,13 @@ app.get('/api/boolean', (req, res) => {
 ///officially
 
 app.get('/api/verify', (req, res) => {
-  return res.status(400).json({
+  return res.status(200).json({
     success: true,
     message: 'Success',
-    data: 0
+    data: 1
   });
 });
+
 
 
 
