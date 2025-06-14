@@ -47,6 +47,16 @@ app.get('/api/verify', (req, res) => {
   });
 });
 
+//2nd official
+
+app.get('/api/verify/v2', (req, res) => {
+  return res.status(200).json({
+    success: true,
+    message: 'Success',
+    data: 0
+  });
+});
+
 
 
 
