@@ -57,7 +57,14 @@ app.get('/api/verify/v2', (req, res) => {
   });
 });
 
-
+//3rd official
+app.get('/api/verify/v3', (req, res) => {
+  return res.status(200).json({
+    success: true,
+    message: 'Success',
+    data: 0
+  });
+});
 
 
 // Upload Image API
